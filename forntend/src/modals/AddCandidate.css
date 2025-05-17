@@ -1,0 +1,193 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  width: 800px;
+  max-width: 90%;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #2F4F4F;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #e3e7eb;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-form {
+  padding: 24px 32px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.staar {
+  color: red;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px 16px;
+  border: 2px solid #2F4F4F;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+}
+
+.form-footer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkbox {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-btn {
+  align-self: flex-end;
+  background-color: #ccc;
+  color: #050e14;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: not-allowed;
+  font-weight: 600;
+}
+
+.save-btn2 {
+  align-self: flex-end;
+  background-color: #2F4F4F;
+  color: #e6eaee;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+/* Responsive Media Queries */
+
+
+/* for 1200px */
+@media (max-width: 1200px) {
+  .modal-content {
+    width: 90%;
+    padding: 0;
+  }
+
+  .modal-form {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* for 768px */
+@media (max-width: 768px) {
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .close-btn {
+    font-size: 20px;
+    align-self: flex-end;
+  }
+
+  .modal-form {
+    padding: 16px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+
+  .save-btn,
+  .save-btn2 {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* for 480px */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    border-radius: 8px;
+  }
+
+  .modal-header h2 {
+    font-size: 16px;
+  }
+
+  .form-footer {
+    gap: 12px;
+  }
+
+  .save-btn,
+  .save-btn2 {
+    font-size: 15px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,8 @@
+.dashboard{
+  display: flex;
+  /* gap: 20px; */
+  padding: 30px 10px;
+}
+.dashboard > main {
+  width: 100%;
+}

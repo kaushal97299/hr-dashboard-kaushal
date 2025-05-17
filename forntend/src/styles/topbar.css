@@ -1,0 +1,158 @@
+/* Base Styles */
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.top-bar-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-bar-left h2 {
+  color: #4a4a4a;
+  user-select: none;
+  margin: 0;
+}
+
+select {
+  font-size: 12px;
+  color: #4a4a4a;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 6px 16px;
+  background: white;
+  cursor: pointer;
+  transition: outline-color 0.2s ease;
+}
+
+select:focus {
+  outline-color: #3b0764;
+  outline-offset: 2px;
+}
+
+.top-bar-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-bar-right input[type="search"] {
+  font-size: 12px;
+  color: #9ca3af;
+  padding: 6px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  width: 160px;
+  transition: outline-color 0.2s ease;
+}
+
+.top-bar-right input[type="search"]::placeholder {
+  color: #9ca3af;
+}
+
+.top-bar-right input[type="search"]:focus {
+  outline-color: #3b0764;
+  outline-offset: 2px;
+}
+
+.btn-add {
+  background-color: #3b0764;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 8px 20px;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-add:hover,
+.btn-add:focus {
+  background-color: #4c1d95;
+  outline: none;
+}
+
+.icon-button {
+  color: #4a4a4a;
+  font-size: 14px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button:hover,
+.icon-button:focus {
+  color: #3b0764;
+  outline: none;
+}
+
+/* Media Queries */
+/* Desktop (1025px and up) */
+@media (min-width: 1025px) {
+  .top-bar {
+    padding: 0 24px;
+  }
+
+  .top-bar-right input[type="search"] {
+    width: 180px;
+  }
+}
+
+/* Laptop (769px - 1024px) */
+@media (max-width: 1024px) {
+  .top-bar {
+    padding: 0 16px;
+  }
+
+  .top-bar-right input[type="search"] {
+    width: 150px;
+  }
+}
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  .top-bar {
+    gap: 10px;
+  }
+
+  .top-bar-right input[type="search"] {
+    width: 140px;
+  }
+
+  .btn-add {
+    padding: 8px 16px;
+  }
+}
+
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .top-bar-right input[type="search"] {
+    width: 100%;
+  }
+
+  .btn-add {
+    width: 100%;
+    text-align: center;
+  }
+}
+
