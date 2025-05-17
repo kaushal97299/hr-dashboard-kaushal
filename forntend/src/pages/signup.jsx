@@ -38,7 +38,7 @@ const Register = () => {
 
     try {
       setSubmitting(true)
-      const response = await axios.post("http://localhost:4500/api/auth/register", formData);
+      const response = await axios.post("https://hr-dashboard-kaushal.onrender.com/api/auth/register", formData);
       console.log(response);
       navigate("/login");
     } catch (err) {

@@ -12,7 +12,7 @@ const Candidates = () => {
   // get candidates from backend
   const fetchCandidates = async () => {
     try {
-      const res = await axios.get("http://localhost:4500/api/candidates/all");
+      const res = await axios.get("https://hr-dashboard-kaushal.onrender.com/api/candidates/all");
       setCandidates(res.data);
     } catch (error) {
       console.error("Error fetching candidates", error);
@@ -22,7 +22,7 @@ const Candidates = () => {
   //  get employes
   const fetchEmployes = async () => {
     try {
-      const res = await axios.get("http://localhost:4500/api/employees/all");
+      const res = await axios.get("https://hr-dashboard-kaushal.onrender.com/api/employees/all");
       setEmployes(res.data);
     } catch (error) {
       console.error("Error fetching employes", error);
@@ -32,7 +32,7 @@ const Candidates = () => {
   //  Add candidate
   const addCandidate = async (candidateData) => {
     try {
-      await axios.post("http://localhost:4500/api/candidates/add", candidateData);
+      await axios.post("https://hr-dashboard-kaushal.onrender.com/api/candidates/add", candidateData);
       fetchCandidates();
     } catch (error) {
       console.error("Error adding candidate", error);
@@ -42,7 +42,7 @@ const Candidates = () => {
   //  Update candidate status
   const updateCandidateStatus = async (id, newStatus) => {
     try {
-      await axios.patch(`http://localhost:4500/api/candidates/status/${id}`, {
+      await axios.patch(`https://hr-dashboard-kaushal.onrender.com/api/candidates/status/${id}`, {
         status: newStatus,
       });
       fetchCandidates();
@@ -58,7 +58,7 @@ const Candidates = () => {
   //  Add employe 
   const addEmploye = async (candidateId) => {
     try {
-      await axios.post("http://localhost:4500/api/employees/add", { id: candidateId });
+      await axios.post("https://hr-dashboard-kaushal.onrender.com/api/employees/add", { id: candidateId });
       fetchEmployes();
     } catch (error) {
       console.error("Error adding employe", error);
@@ -68,7 +68,7 @@ const Candidates = () => {
   //  Delete candidate
   const deleteCandidate = async (id) => {
     try {
-      await axios.delete(`http://localhost:4500/api/candidates/${id}`);
+      await axios.delete(`https://hr-dashboard-kaushal.onrender.com/api/candidates/${id}`);
       setCandidates((prev) => prev.filter((user) => user._id !== id));
     } catch (error) {
       console.error("Error deleting candidate", error);

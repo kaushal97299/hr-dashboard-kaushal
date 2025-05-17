@@ -25,7 +25,7 @@ const Leaves = () => {
   useEffect(() => {
     const fetchPresentEmployees = async () => {
       try {
-        const res = await axios.get('http://localhost:4500/api/employees/present');
+        const res = await axios.get('https://hr-dashboard-kaushal.onrender.com/api/employees/present');
         if (res.data && Array.isArray(res.data)) {
           const employeesWithNames = res.data.map(emp => ({
             ...emp,
@@ -43,7 +43,7 @@ const Leaves = () => {
   useEffect(() => {
     const fetchLeaves = async () => {
       try {
-        const res = await axios.get('http://localhost:4500/api/Leave/leaves');
+        const res = await axios.get('https://hr-dashboard-kaushal.onrender.com/api/Leave/leaves');
         const leaveData = Array.isArray(res.data) ? res.data : res.data.data;
 
         const leavesWithNames = leaveData.map(leave => {
@@ -99,7 +99,7 @@ const Leaves = () => {
         submissionData.append('document', documentFile);
       }
 
-      await axios.post('http://localhost:4500/api/Leave/request', submissionData, {
+      await axios.post('https://hr-dashboard-kaushal.onrender.com/api/Leave/request', submissionData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 
@@ -114,7 +114,7 @@ const Leaves = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.patch(`http://localhost:4500/api/Leave/${id}/status`, { status });
+      await axios.patch(`https://hr-dashboard-kaushal.onrender.com/api/Leave/${id}/status`, { status });
       setLeaves(prev =>
         prev.map(leave => leave._id === id ? { ...leave, status } : leave)
       );
@@ -242,7 +242,7 @@ const Leaves = () => {
                   <td>
                     {leave.documentUrl ? (
                       <a
-                        href={`http://localhost:4500/uploads/${encodeURIComponent(leave.documentUrl.split('uploads/')[1])}`}
+                        href={`https://hr-dashboard-kaushal.onrender.com/uploads/${encodeURIComponent(leave.documentUrl.split('uploads/')[1])}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

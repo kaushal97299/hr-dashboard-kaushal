@@ -8,7 +8,7 @@ const Employes = () => {
   // Fetch all employees
   const fetchEmployes = async () => {
     try {
-      const res = await axios.get("http://localhost:4500/api/employees/all");
+      const res = await axios.get("https://hr-dashboard-kaushal.onrender.com/api/employees/all");
       setEmployes(res.data);
     } catch (error) {
       console.error("Error fetching employes", error);
@@ -20,7 +20,7 @@ const updateEmployeePosition = async (id, newPosition) => {
 
   try {
     const response = await axios.patch(
-      `http://localhost:4500/api/employees/position/${id}`,
+      `https://hr-dashboard-kaushal.onrender.com/api/employees/position/${id}`,
       newPosition
     );
     console.log("Backend Response:", response.data); // Check what the backend is returning
@@ -35,7 +35,7 @@ console.log("App > updateEmployeePosition:", updateEmployeePosition);
   // Delete employee
   const deleteEmployes = async (id) => {
     try {
-      await axios.delete(`http://localhost:4500/api/employees/${id}`);
+      await axios.delete(`https://hr-dashboard-kaushal.onrender.com/api/employees/${id}`);
       fetchEmployes();
     } catch (error) {
       console.error("Error deleting employee", error);

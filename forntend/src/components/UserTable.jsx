@@ -27,7 +27,7 @@ const UserTable = ({
 
   const handleDownloadResume = (fileName) => {
     if (fileName) {
-      window.open(`http://localhost:4500/uploads/resumes/${fileName}`, "_blank");
+      window.open(`https://hr-dashboard-kaushal.onrender.com/uploads/resumes/${fileName}`, "_blank");
     }
   };
 

@@ -34,7 +34,7 @@ const AddCandidate = ({ onClose, onSave }) => {
     data.append("resume", resumeFile); // append file
 
     try {
-      const res = await axios.post("http://localhost:4500/api/candidates/add", data, {
+      const res = await axios.post("https://hr-dashboard-kaushal.onrender.com/api/candidates/add", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

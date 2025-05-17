@@ -27,7 +27,7 @@ const Login = () => {
 
     try {
       setSubmitting(true);
-      const res = await axios.post("http://localhost:4500/api/auth/login", formData);
+      const res = await axios.post("https://hr-dashboard-kaushal.onrender.com/api/auth/login", formData);
 
       // Store token and user in localStorage
       localStorage.setItem("token", res.data.token);
