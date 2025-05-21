@@ -41,7 +41,7 @@ const Login = () => {
       setTimeout(() => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-        alert("Session expired. Please login again.");
+        // alert("Session expired. Please login again.");
         navigate("/login");
       }, 2 * 60 * 60 * 1000);
 
